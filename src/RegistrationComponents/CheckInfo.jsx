@@ -23,7 +23,7 @@ const CheckInfo = () => {
     useEffect(() => {
         if(data != []){
             setUsernameSwap(data.username)
-            setUserRoleSwap(data.member)
+            setUserRoleSwap(data.role)
         }
     }, [data])
 

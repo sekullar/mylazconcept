@@ -56,7 +56,7 @@ const Header = () => {
                         <img src={User} className="w-[35px] group-hover:filter group-hover:invert" alt="User" />
                         {cookies.uid ? <p className="inter-500">Hoşgeldiniz{usernameSwap != "" ? `, ${usernameSwap}` : ""}</p> : <p className="inter-500">Giriş yap</p> }
                     </div> 
-                    {userRoleState && !userRoleState ? 
+                    {userRoleState == "Admin" ? 
                     <button className="bg-sky-500 hover:bg-sky-600 transition-all duration-300 rounded-lg p-3" onClick={() => navigate("/AdminPanel")}>
                         <img src={Shield} className="invert w-[36px]" alt="Shield" />
                     </button>

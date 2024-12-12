@@ -4,7 +4,7 @@ const UserInfoContext = createContext();
 
 const DataProvider = ({children}) => {
     const [usernameSwap,setUsernameSwap] = useState("");
-    const [userRoleSwap,setUserRoleSwap] = useState(null);
+    const [userRoleSwap,setUserRoleSwap] = useState("");
     const [userMailSwap,setUserMailSwap] = useState("");
 
     useEffect(() => {

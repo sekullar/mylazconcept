@@ -30,7 +30,7 @@ export const register = async (username, email, password,member) => {
       await setDoc(doc(db, "users", user.uid), {
         username: username,
         email: user.email, 
-        member: true,
+        role: "member",
         createdAt: new Date().toISOString(), //fixlencek, yanl1ış kaydediyor.
       });
   
