@@ -1,0 +1,11 @@
+.hover-container-header {
+    transition: all 0.3s ease;
+}
+
+.hover-container-header:hover img{
+    filter:invert(1);
+}
+
+.hover-container-header:hover p{
+    color: white;
+}

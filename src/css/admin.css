@@ -1,0 +1,75 @@
+.bg-special-dark{
+    background-color: rgba(0, 0, 0, 0.65);
+}
+
+.openAni{
+    transition: all .3s ease;
+    animation-name: openAniFrame;
+    animation-duration: .35s;
+    animation-direction: alternate;
+    animation-fill-mode: both;
+}
+
+.closeAni{
+    animation-name: closeAniFrame;
+    animation-duration: .35s;
+    animation-direction: alternate;
+    animation-fill-mode: both;
+}
+
+.slideAniOpen{
+    animation-name: slideAniFrameOpen;
+    animation-duration: .35s;
+    animation-direction: alternate;
+    animation-fill-mode: both;
+}
+
+.slideAniClose{
+    animation-name: slideAniFrameClose;
+    animation-duration: .35s;
+    animation-direction: alternate;
+    animation-fill-mode: both;
+}
+
+@keyframes openAniFrame {
+    from{
+        opacity: 0;
+    }
+
+    to{
+        opacity: 1;
+    }
+}   
+
+@keyframes closeAniFrame {
+    from{
+        opacity: 1;
+    }
+
+    to{
+        opacity: 0;
+    }
+}   
+
+@keyframes slideAniFrameOpen {
+    from{
+        left: -100%;
+    }
+
+    to{
+        left: 0;
+    }
+}   
+
+@keyframes slideAniFrameClose {
+    from{
+        left: 0;
+    }
+
+    to{
+        left: -100%;
+        display: none;
+    }
+}   
+
+
