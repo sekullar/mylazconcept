@@ -21,15 +21,12 @@ const AdminPanel = () => {
     const [hiddenModal,setHiddenModal] = useState(false);
 
     useEffect(() => {
-        console.log("userroleswap start", userRoleSwap)
-        if(userRoleSwap || userRoleSwap === null || userRoleSwap === undefined){
-            console.log("404 userroleswap",userRoleSwap)
+        if(userRoleSwap && userRoleSwap === null || userRoleSwap === undefined){
             navigate("/404NotFound")
         }
     }, [])
 
     useEffect(() => {
-        console.log(pageValue);
     }, [pageValue])
 
     useEffect(() => {

@@ -15,10 +15,13 @@
     "react-cookie": "^7.2.2",
     "react-dom": "^18.3.1",
     "react-hot-toast": "^2.4.1",
+    "react-infinite-scroll-component": "^6.1.0",
+    "react-modal": "^3.16.1",
     "react-router-dom": "^7.0.1",
     "react-scripts": "5.0.1",
     "react-select": "^5.8.3",
     "react-simple-offcanvas": "^1.0.9",
+    "react-slick": "^0.30.3",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

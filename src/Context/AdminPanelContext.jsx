@@ -4,7 +4,7 @@ const AdminPanelContext = createContext();
 
 const DataProviderAdmin = ({children}) => {
     const [modalOpen,setModalOpen] = useState(false);
-    const [pageValue,setPageValue] = useState("");
+    const [pageValue,setPageValue] = useState("adminStartup");
 
     return(
         <AdminPanelContext.Provider value={{modalOpen, pageValue ,setModalOpen,setPageValue}}>

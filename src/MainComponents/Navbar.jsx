@@ -1,6 +1,9 @@
 import Down from "../images/down.svg"
 
 const Navbar = () => {
+
+   
+
     return(
         <>
             <div className="flex items-center border-y-1 ms-4 gap-5">

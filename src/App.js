@@ -11,8 +11,11 @@ import { useCookies } from "react-cookie";
 import CheckInfo from "./RegistrationComponents/CheckInfo";
 import { DataProvider } from "./Context/UserInfoContext";
 import { DataProviderAdmin } from "./Context/AdminPanelContext";
+import { DataProviderProduct } from "./Context/ProductForwardContext";
 import AdminPanel from "./AdminComponents/AdminPanel";
 import NotFound from "./RegistrationComponents/NotFound";
+import ProductShow from "./MainComponents/ProductShow";
+import ProductDetail from "./MainComponents/ProductDetail";
 
 
 function App() {
@@ -28,7 +31,9 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/accountManager" element={<AccountManager />} />
         <Route path="/adminPanel" element={<AdminPanel />} />
+        <Route path="/productShow" element={<ProductShow />} />
         <Route path="/404NotFound" element={<NotFound />} />
+        <Route path="/productDetail" element={<ProductDetail />} />
       </Routes>
     </>
   );
@@ -36,13 +41,15 @@ function App() {
 
 function MainWrapper() {
   return (
-    <DataProvider>
-      <DataProviderAdmin>
-        <Router>
-          <App />
-        </Router>
-      </DataProviderAdmin>
-    </DataProvider>
+      <DataProviderProduct>
+        <DataProvider>
+            <DataProviderAdmin>
+              <Router>
+                <App />
+              </Router>
+            </DataProviderAdmin>
+        </DataProvider>
+      </DataProviderProduct>
   );
 }
 

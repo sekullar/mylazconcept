@@ -8,7 +8,6 @@ const DataProvider = ({children}) => {
     const [userMailSwap,setUserMailSwap] = useState("");
 
     useEffect(() => {
-        console.log("coming context usernameswap", usernameSwap)
     }, [usernameSwap])
 
     return(

@@ -3,6 +3,8 @@ import Header from "./Header"
 import Home from "./Home"
 import Navbar from "./Navbar"
 import toast, { Toaster } from 'react-hot-toast';
+import Footer from "./Footer";
+
 
 
 const Main = () => {
@@ -12,6 +14,7 @@ const Main = () => {
             <Header />
             <Navbar />
             <Home />
+            <Footer />
         </>
     )
 }

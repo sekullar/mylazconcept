@@ -3,21 +3,31 @@ import BackupGoogleDrive from "./BackupGoogleDrive"
 import toast from 'react-hot-toast';
 import axios from 'axios';
 
-const ImageUploader = ({mainTriggerProps}) => {
+const ImageUploader = ({mainTriggerProps, returnUrl, returnTrigger}) => {
   const [image, setImage] = useState(null); 
   const [imageUrl, setImageUrl] = useState(''); 
   const [value,setValue] = useState(0);
+  const [returnUrlState,setReturnUrlState] = useState("");
+
+  
 
   const handleImageChange = (e) => {
     setImage(e.target.files[0]);
   };
 
   useEffect(() => {
-    if(mainTriggerProps == 1){
-      handleUpload();
+    if (mainTriggerProps == 1) {
+        if (!image) {
+            toast.error("Lütfen resim seçin");
+        } else {
+            handleUpload();
+        }
     }
-  }, [mainTriggerProps])
+}, [mainTriggerProps]);
 
+
+  
+  
   const handleUpload = async () => {
     toast.loading("Fotoğraf buluta yedekleniyor...")
     if (!image || image == null) {
@@ -34,9 +44,9 @@ const ImageUploader = ({mainTriggerProps}) => {
         'https://api.cloudinary.com/v1_1/dysmzoorv/image/upload',
         formData
       );
-      console.log(response.data);
       setValue(1)
-      setImageUrl(response.data.secure_url); 
+      returnUrl(response.data.secure_url); 
+      returnTrigger(1)
       toast.dismiss();
       toast.success("Fotoğraf başarıyla yüklendi")
     } catch (error) {

@@ -19,8 +19,6 @@ const Header = () => {
   const {usernameSwap, userRoleSwap} = useContext(UserInfoContext);
 
   useEffect(() => {
-    console.log("usernameswap",usernameSwap);
-    console.log("userroleswap", userRoleSwap);
   }, [usernameSwap])
 
 
@@ -41,7 +39,6 @@ const Header = () => {
 
     useEffect(() => {
         setUserRoleState(userRoleSwap)
-        console.log(userRoleState,userRoleSwap)
     }, [userRoleSwap])
 
     return(
@@ -49,16 +46,16 @@ const Header = () => {
             <div className="flex items-center justify-between p-4">
                 <div className="flex items-center">
                     <img src={Logo} className="w-[90px]" alt="Logo" />
-                    <p className="inter-600 text-xl">Toptan & Perakende</p>
+                    <p className="inter-600 text-xl sm:block hidden">Toptan & Perakende</p>
                 </div>
                 <div className="flex items-center gap-4">
-                    <div onClick={() => navigateCheckCookie()} className="flex items-center border hover-container-header p-3 rounded-xl border-1 border-slate-600 gap-2 cursor-pointer transition-all duration-300 px-6 hover:border-zinc-900 hover:bg-zinc-900">
-                        <img src={User} className="w-[35px] group-hover:filter group-hover:invert" alt="User" />
-                        {cookies.uid ? <p className="inter-500">Hoşgeldiniz{usernameSwap != "" ? `, ${usernameSwap}` : ""}</p> : <p className="inter-500">Giriş yap</p> }
+                    <div onClick={() => navigateCheckCookie()} className="flex items-center border hover-container-header p-3 rounded-xl border-1 border-slate-600 gap-2 cursor-pointer transition-all duration-300 sm:px-6 px-3 hover:border-zinc-900 hover:bg-zinc-900">
+                        <img src={User} className="sm:w-[35px] w-[20px] group-hover:filter group-hover:invert" alt="User" />
+                        {cookies.uid ? <p className="inter-500 sm:block hidden">Hoşgeldiniz{usernameSwap != "" ? `, ${usernameSwap}` : ""}</p> : <p className="inter-500 sm:block hidden">Giriş yap</p> }
                     </div> 
                     {userRoleState == "Admin" ? 
                     <button className="bg-sky-500 hover:bg-sky-600 transition-all duration-300 rounded-lg p-3" onClick={() => navigate("/AdminPanel")}>
-                        <img src={Shield} className="invert w-[36px]" alt="Shield" />
+                        <img src={Shield} className="invert sm:w-[36px] w-[20px]" alt="Shield" />
                     </button>
                      : ""}
                 </div>

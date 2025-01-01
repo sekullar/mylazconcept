@@ -33,7 +33,6 @@ const CheckInfo = () => {
             const uid = cookies.uid;
             const userDocRef = doc(db,"users",uid);
             const userDoc = await getDoc(userDocRef);
-            console.log(userDoc.data())
             setData(userDoc.data());
             if(userDoc.exists()){
                 navigate("/home")
@@ -58,7 +57,7 @@ const CheckInfo = () => {
 
     return(
         <>
-            <div className="bg-white position-fixed w-full h-screen flex items-center justify-center">
+            <div className="bg-white fixed w-full h-screen flex items-center justify-center">
                 <div className="loader"></div>
             </div>
         </>

@@ -45,7 +45,6 @@ const GoogleDriveUploader = ({ triggerValue, fileProps }) => {
       const oneYearFromNow = new Date();
       oneYearFromNow.setFullYear(oneYearFromNow.getFullYear() + 1);
       gapi.auth2.getAuthInstance().signIn().then(user => {
-      console.log("User signed in:", user);
       setAccessKey(user.xc.access_token)
       setCookie("googleDriveAccessKey",user.xc.access_token, {path: "/", expires: oneYearFromNow})
       setIsSignedIn(true);
@@ -57,7 +56,6 @@ const GoogleDriveUploader = ({ triggerValue, fileProps }) => {
   const handleSignOut = () => {
     gapi.auth2.getAuthInstance().signOut().then(() => {
       setIsSignedIn(false);
-      console.log("User signed out");
       removeCookie("googleDriveAccessKey", {path: "/"});
     });
   };
@@ -95,7 +93,6 @@ const GoogleDriveUploader = ({ triggerValue, fileProps }) => {
       const data = await response.json();
       toast.dismiss();
       if (response.ok) {
-        console.log("Dosya başarıyla yüklendi:", data);
         toast.success("Google Drive'a yedeklendi")
       } else {
         console.error("Yükleme hatası:", data.error);
